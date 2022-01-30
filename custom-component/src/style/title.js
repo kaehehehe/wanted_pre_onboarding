@@ -5,4 +5,5 @@ export const Title = styled.div`
   top: 20px;
   left: 25px;
   font-weight: bold;
+  font-size: 1.3rem;
 `;

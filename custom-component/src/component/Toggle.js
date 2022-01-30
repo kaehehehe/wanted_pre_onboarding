@@ -20,6 +20,7 @@ const ToggleTitle = styled(Title)`
 const Text = styled.div`
   margin-top: 10px;
   color: ${({ theme }) => (theme === 'dark' ? 'white' : 'black')};
+  font-size: 1.2rem;
 `;
 
 const Toggle = () => {
