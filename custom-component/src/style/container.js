@@ -5,4 +5,5 @@ export const Container = styled.div`
   border-radius: 15px;
   margin: 10px;
   border: 1px solid lightgray;
+  position: relative;
 `;
