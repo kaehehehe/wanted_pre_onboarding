@@ -43,8 +43,6 @@ const CloseBtn = styled.button`
 `;
 
 const Input = styled.input`
-  outline: none;
-  border: none;
   width: 50%;
   margin: 5px;
   font-size: 16px;
