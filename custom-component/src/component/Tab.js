@@ -17,6 +17,17 @@ const TabMenu = styled.ul`
   position: absolute;
   color: white;
   cursor: pointer;
+
+  li {
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+    background-color: pink;
+  }
+
+  li.focused {
+    background-color: hotpink;
+  }
 `;
 
 const TabContents = styled.div`
@@ -25,29 +36,6 @@ const TabContents = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-`;
-
-const TabOne = styled.li`
-  width: 25%;
-  height: 100%;
-  padding: 10px;
-  background-color: ${({ target }) => (target === '1' ? 'hotpink' : 'pink')};
-
-  &:hover {
-    background-color: hotpink;
-  }
-`;
-
-const TabTwo = styled(TabOne)`
-  background-color: ${({ target }) => (target === '2' ? 'hotpink' : 'pink')};
-`;
-
-const TabThree = styled(TabOne)`
-  background-color: ${({ target }) => (target === '3' ? 'hotpink' : 'pink')};
-`;
-
-const TabFour = styled(TabOne)`
-  background-color: ${({ target }) => (target === '4' ? 'hotpink' : 'pink')};
 `;
 
 const Tab = () => {
@@ -61,18 +49,34 @@ const Tab = () => {
     <TabContainer>
       <Title>Tab</Title>
       <TabMenu>
-        <TabOne id="1" onClick={handleTab} target={target}>
+        <li
+          id="1"
+          onClick={handleTab}
+          className={target === '1' ? 'focused' : ''}
+        >
           Tab 1
-        </TabOne>
-        <TabTwo id="2" onClick={handleTab} target={target}>
+        </li>
+        <li
+          id="2"
+          onClick={handleTab}
+          className={target === '2' ? 'focused' : ''}
+        >
           Tab 2
-        </TabTwo>
-        <TabThree id="3" onClick={handleTab} target={target}>
+        </li>
+        <li
+          id="3"
+          onClick={handleTab}
+          className={target === '3' ? 'focused' : ''}
+        >
           Tab 3
-        </TabThree>
-        <TabFour id="4" onClick={handleTab} target={target}>
+        </li>
+        <li
+          id="4"
+          onClick={handleTab}
+          className={target === '4' ? 'focused' : ''}
+        >
           Tab 4
-        </TabFour>
+        </li>
       </TabMenu>
       <TabContents>This is Tab {target} contents.</TabContents>
     </TabContainer>
