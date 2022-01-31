@@ -15,3 +15,8 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+
+input {
+  outline: none;
+  border: none;
+}
