@@ -12,26 +12,27 @@ const ClickToEditContainer = styled(Container)`
 
 const Section = styled.div`
   margin-bottom: 10px;
-  width: 200px;
+  width: 220px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   label {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   input {
     width: 150px;
     outline: none;
     border: 1px solid gray;
     padding-left: 3px;
-    height: 25px;
+    height: 30px;
     border-radius: 5px;
+    font-size: 1rem;
   }
 `;
 
 const Text = styled.div`
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 1.3rem;
 `;
 
