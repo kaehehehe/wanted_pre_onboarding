@@ -1,1 +1,67 @@
-# wanted_pre_onboarding
+과제는 여기서 확인할 수 있습니다. 👉 [보러 가기]()
+<br />
+
+## ✨ 공통
+- DRY(Don't Repeat Yourself) 원칙을 지키기 위해 반복적으로 써야 하는 코드는 재활용하도록 노력했습니다.
+- CSS는 styled-components를 사용했습니다.
+- 반응형 웹으로 구현했습니다.
+
+<br />
+<br />
+
+## ✨ Toggle
+- input 태그의 checkbox를 활용해서 구현했습니다.
+- 해당 toggle을 실제로 적용한 토이프로젝트가 있어서 여기에도 적용했습니다. 👉 [보러 가기](https://kaehehehe.github.io/my-pomodoro/)
+- toggle을 클릭할 때마다 dark mode, light mode로 변경됩니다.
+- 배경 색이 바뀌는 부분은 theme라는 상태(state)를 만들어서 styled-components 코드에다가 현재 theme를 전달하는 방식으로 구현했습니다.
+
+![KakaoTalk_Photo_2022-02-01-14-20-42 003](https://user-images.githubusercontent.com/77221488/151917051-7b17c974-ff74-4e1c-ba0f-6ec7bd7996c1.gif)
+
+<br />
+<br />
+
+## ✨ Modal
+- 사용자 편의성을 고려해서 모달 창의 x 버튼을 찾아서 클릭하지 않아도 모달 창 외의 아무 곳이나 클릭하면 창이 닫히게 구현했습니다.
+- 모달 창이 떴을 때 나타나는 배경에다가 id 값을 지정해서 click 이벤트를 활용해 e.target.id가 해당 id일 때 모달 창이 닫히는 방식으로 구현했습니다. 
+
+![KakaoTalk_Photo_2022-02-01-14-21-34 003](https://user-images.githubusercontent.com/77221488/151917113-97a8a286-9d36-4335-8e16-dbae69b3c6cc.gif)
+
+<br />
+<br />
+
+## ✨ Tab
+- 각 tab마다 id 값을 지정해서 해당 tab이 target이 되었을 때 className을 활용해서 tab 색상이 바뀌도록 구현했습니다.
+- 창 크기에 따라 tab 폭이 변경되도록 구현했습니다.
+
+![KakaoTalk_Photo_2022-02-01-14-20-39 001](https://user-images.githubusercontent.com/77221488/151917158-24459494-9b31-4cb3-bbcd-c32466a8843d.gif)
+
+<br />
+<br />
+
+## ✨ Tag
+- 태그가 중복되는 경우에는 반복 추가되지 않도록 구현했습니다.
+- 한국어나 일본어도 태그로 추가할 수 있도록 keydown 이벤트 대신 keyup 이벤트를 사용해서 구현했습니다. 엔터키를 누르면 태그가 추가됩니다.
+- input에 focus 되었을 때 테두리 색이 하늘색으로 변경되도록 구현했습니다.
+
+![KakaoTalk_Photo_2022-02-01-14-20-41 002](https://user-images.githubusercontent.com/77221488/151917175-80e92835-b9c3-4600-80fd-c4f4c7fbc36c.gif)
+
+<br />
+<br />
+
+## ✨ AutoComplete
+- 디자인은 구글 검색 창을 기반으로 했습니다.
+- 마우스로도 키워드 선택이 가능하지만 키보드 사용을 선호하는 유저를 위해 키보드만으로도 선택할 수 있도록 구현했습니다.
+- 입력한 값과 동일한 값으로 시작되는 키워드가 자동으로 나타나도록 구현했습니다.(slice 메서드를 활용)<br/> EX) "co"를 입력하면 "co"로 시작하는 단어들이 나온다.
+
+![KakaoTalk_Photo_2022-02-01-17-44-52](https://user-images.githubusercontent.com/77221488/151937614-bb5c8bc9-a817-47cf-ae70-a9db0c849601.gif)
+
+<br />
+<br />
+
+## ✨ ClickToEdit
+- 나이는 0보다 작은 숫자가 될 수 없으므로 0보다 작은 숫자를 입력하면 반영되지 않도록 구현했습니다.
+- 이름과 나이를 빈 칸으로 입력하는 경우 유효하게 반영되지 않도록 구현했습니다.
+- 사용자가 값을 입력할 때마다 렌더링되는 것은 비효율적이기 때문에 useRef를 활용하여 구현했습니다. 해당 input에서 focus가 되지 않았을 때(blur 이벤트를 활용) 딱 한번만 렌더링 되도록 구현했습니다.
+- 사용자 편의성을 고려해서 빈 칸이 아니라 해당 칸의 타이틀을 클릭하는 경우에도 해당 input에 포커싱되도록 구현했습니다.
+
+![KakaoTalk_Photo_2022-02-01-14-21-32 001](https://user-images.githubusercontent.com/77221488/151917198-ff2b056c-6efa-4901-81f8-3b1abb820dbc.gif)
