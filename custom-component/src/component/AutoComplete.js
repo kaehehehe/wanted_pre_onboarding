@@ -78,13 +78,12 @@ const AutoComplete = () => {
   const handleInputChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
-    if (value === '') {
-      setHasOptions(false);
-    }
     const filteredWords = [...words].filter(
       (word) => word.slice(0, value.length) === value
     );
-    if (filteredWords.length > 0) {
+    if (value === '') {
+      setHasOptions(false);
+    } else if (filteredWords.length > 0) {
       setHasOptions(true);
       setOptions(filteredWords);
     }
