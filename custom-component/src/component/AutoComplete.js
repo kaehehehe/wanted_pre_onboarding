@@ -25,7 +25,7 @@ const SearchBar = styled.div`
   height: 45px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  border-radius: ${({ hasOptions }) => (hasOptions ? '20px 20px 0 0' : '40px')};
+  border-radius: ${({ hasOptions }) => (hasOptions ? '10px 10px 0 0' : '40px')};
   border-bottom: ${({ hasOptions }) => hasOptions && 'none'};
   margin-top: 55px;
 `;
@@ -40,7 +40,6 @@ const Icon = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  border-radius: 5px;
   height: 30px;
   width: 100%;
   font-size: 15px;
@@ -51,12 +50,13 @@ const AutoCompleteBox = styled.ul`
   background-color: white;
   font-size: 15px;
   visibility: ${({ hasOptions }) => (hasOptions ? 'block' : 'hidden')};
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 10px 10px;
   border: 1px solid transparent;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
 
   li {
     padding: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
   }
 
