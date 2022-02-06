@@ -15,7 +15,7 @@
 - toggle을 클릭할 때마다 dark mode, light mode로 변경됩니다.
 - 배경 색이 바뀌는 부분은 theme라는 상태(state)를 만들어서 styled-components 코드에다가 현재 theme를 전달하는 방식으로 구현했습니다.
 
-![KakaoTalk_Photo_2022-02-01-14-20-42 003](https://user-images.githubusercontent.com/77221488/151917051-7b17c974-ff74-4e1c-ba0f-6ec7bd7996c1.gif)
+![KakaoTalk_Photo_2022-02-06-13-26-50](https://user-images.githubusercontent.com/77221488/152667766-6b6bb64a-884f-4f6c-b8d1-9b38a06b5687.gif)
 
 <br />
 <br />
