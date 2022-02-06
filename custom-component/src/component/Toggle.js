@@ -24,18 +24,17 @@ const StyledToggle = styled.label`
   cursor: pointer;
 `;
 
-const LightModeIcon = styled.div`
+const DarkModeIcon = styled.div`
   display: ${({ theme }) => (theme === 'dark' ? 'block' : 'none')};
   position: absolute;
   font-size: 25px;
   top: -1px;
-  left: 3px;
   z-index: 100;
 `;
 
-const DarkModeIcon = styled(LightModeIcon)`
+const LightModeIcon = styled(DarkModeIcon)`
   display: ${({ theme }) => (theme === 'dark' ? 'none' : 'block')};
-  left: 38px;
+  left: 35px;
 `;
 
 const Input = styled.input`
@@ -50,8 +49,9 @@ const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${({ theme }) =>
-    theme === 'dark' ? 'skyblue' : '#1c2128'};
+  background-color: #9da7b2;
+    background-color: ${({ theme }) =>
+  theme === 'dark' ? '#9da7b2' : '#1c2128'};
   border-radius: 32px;
 
   &::before {
@@ -91,8 +91,8 @@ const Toggle = () => {
     <ToggleContainer theme={theme}>
       <ToggleTitle theme={theme}>Toggle</ToggleTitle>
       <StyledToggle>
+        <DarkModeIcon theme={theme}>🌜</DarkModeIcon>
         <LightModeIcon theme={theme}>🌞</LightModeIcon>
-        <DarkModeIcon theme={theme}>🌛</DarkModeIcon>
         <Input type="checkbox" onClick={handleToggle} />
         <Slider theme={theme} />
       </StyledToggle>
