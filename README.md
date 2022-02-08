@@ -19,6 +19,56 @@
 
 ![KakaoTalk_Photo_2022-02-06-13-26-50](https://user-images.githubusercontent.com/77221488/152667766-6b6bb64a-884f-4f6c-b8d1-9b38a06b5687.gif)
 
+### ✅ Error Handling Log
+
+#### What kind of error?
+
+순수 css에서는 아래 코드와 같이 content 속성값을 이모지로 지정해주기만 하면 테마에 맞는 이모지가 보이는 toggle을 구현할 수 있었습니다. 하지만 styled-components으로 구현하려고 하니까 이 방법으로는 이모지가 화면에 보이지 않았습니다.
+
+```css
+.slider::after {
+  position: absolute;
+  content: '🌞';
+  font-size: 22px;
+  right: 5px;
+}
+```
+
+#### How to solve the problem
+
+LightModeIcon 컴포넌트와 DarkModeIcon 컴포넌트를 만들어서 theme에 따라`display` 속성이 `block`이 되거나  `none`이 되도록 구현해서 이 문제를 해결했습니다. 
+
+이모지 위치는 toggle(StyledToggle 컴포넌트) 기준으로 `position: absolute`를 사용해서 위치를 지정했습니다.
+
+```jsx
+const LightModeIcon = styled.div`
+  display: ${({ theme }) => (theme === 'dark' ? 'block' : 'none')};
+  position: absolute;
+  font-size: 25px;
+  top: -1px;
+  left: 3px;
+  z-index: 100;
+`;
+
+const DarkModeIcon = styled(LightModeIcon)`
+  display: ${({ theme }) => (theme === 'dark' ? 'none' : 'block')};
+  left: 38px;
+`;
+
+return (
+    <ToggleContainer theme={theme}>
+      <ToggleTitle theme={theme}>Toggle</ToggleTitle>
+      <StyledToggle>
+        <LightModeIcon theme={theme}>🌞</LightModeIcon>
+        <DarkModeIcon theme={theme}>🌛</DarkModeIcon>
+        <Input type="checkbox" onClick={handleToggle} />
+        <Slider theme={theme} />
+      </StyledToggle>
+      <Text theme={theme}>{theme} mode</Text>
+    </ToggleContainer>
+  );
+```
+
 <br />
 <br />
 
